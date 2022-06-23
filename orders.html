@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+
+<head>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Taqueria Los Portales">
+	<meta name="author" content="CADLovers">
+	<meta name="keyword"
+		content="Comida, Tacos, Antojitos, Especialidades, Caldos, Tortas, Sopas, Side Orders, Bebidas, Mariscos">
+	<meta charset="UTF-8" />
+	<link rel="shortcut icon" href="img/favicon.png">
+	<title>.:: Taqueria Los Portales ::.</title>
+	<!-- Bootstrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- bootstrap theme -->
+	<link href="css/bootstrap-theme.css" rel="stylesheet">
+	<!--external css-->
+	<!-- font icon -->
+	<link href="css/elegant-icons-style.css" rel="stylesheet" />
+	<link href="css/font-awesome.min.css" rel="stylesheet" />
+	<!-- full calendar css-->
+	<link href="assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+	<link href="assets/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" />
+	<!-- easy pie chart-->
+	<link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css"
+		media="screen" />
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+	<link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="css/fullcalendar.css">
+	<link href="css/widgets.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/style-responsive.css" rel="stylesheet" />
+	<link href="css/xcharts.min.css" rel=" stylesheet">
+	<link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+	<!-- teclado virtual -->
+	<link rel="stylesheet" href="js/keyboard/keyboard.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- CCS para poner texto en imagen -->
+	<link rel="stylesheet" href="css/text-over-image.css">
+	<style>
+		.modal-body {
+			max-height: 90%;
+			position: relative;
+			overflow-y: auto;
+		}
+
+		.custom {
+			min-height: 90%;
+		}
+	</style>
+
+	<meta name="_token" content="dmhxJRvL1UzBeEDV9rb7ihO4THIztM86H9ZGgPBY" />
+</head>
+
+<body>
+	<!-- container section start -->
+	<section id="container" class="">
+		</header>
+		<!--header end-->
+		<!--sidebar start-->
+		<aside>
+			<div id="sidebar" class="nav-collapse">
+
+				<!-- sidebar menu start-->
+
+				<ul class="sidebar-menu">
+
+					<li>
+						<img src="img/logoportales.png" class="img-responsive" alt="Taquería Los Portales"
+							style="float: none;transform: scale(1);position: static;padding: 0; margin: 0;"><br>
+					</li>
+					<li class="sub-menu" id='sideIndex'>
+						<form>
+							<a onclick="confirmLeaveSite('')" class="fcc-btn btn">
+								<i class="icon_house_alt"></i>
+								<p>Inicio</p>
+							</a>
+						</form>
+					</li>
+					<li class="sub-menu" id='sideOrders'>
+						<a onclick="confirmLeaveSite('orders')" class="fcc-btn btn">
+							<i class="fa fa-money"></i>
+							<p>Ordenes</p>
+						</a>
+					</li>
+					<li class="sub-menu" id='sideFood'>
+						<a onclick="confirmLeaveSite('reportfoods')" class="fcc-btn btn">
+							<i class="fa fa-cutlery"></i>
+							<p>Platillos</p>
+						</a>
+					</li>
+					<li class="sub-menu" id='sideInventory'>
+						<a onclick="confirmLeaveSite('reportinventory')" class="fcc-btn btn">
+							<i class="fa fa-glass"></i>
+							<p>Bebidas</p>
+						</a>
+					</li>
+					<li class="sub-menu" id='sideCat'>
+						<a onclick="confirmLeaveSite('categories')" class="fcc-btn btn">
+							<i class="fa fa-tag"></i>
+							<p>Categorías</p>
+						</a>
+					</li>
+
+
+
+					<li class="sub-menu" id='sideUser'>
+						<a onclick="confirmLeaveSite('users')" class="fcc-btn btn">
+							<i class="fa fa-users"></i>
+							<p>Usuarios</p>
+						</a>
+					</li>
+
+
+
+					<li class="sub-menu" id='sideSales'>
+						<a onclick="confirmLeaveSite('sales')" class="fcc-btn btn">
+							<i class="fa fa-tasks"></i>
+							<p>Ventas</p>
+						</a>
+					</li>
+
+				</ul>
+				<!-- sidebar menu end-->
+
+			</div>
+		</aside>
+		<!--sidebar end-->
+		<section id="main-content" >
+			<section >
+				<!--overview start-->
+				<div class="back">
+					<div class="row">
+						<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+							<h3 class="page-header">&nbsp;&nbsp;&nbsp; <div class="toggle-nav">
+									<div class="icon-reorder tooltips" data-original-title="Activar/Desactivar Menú"
+										data-placement="bottom">
+										<i class="icon_menu"></i> Ordenes
+									</div>
+								</div>
+							</h3>
+						</div>
+						<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+							<h3 class="page-header">
+								<h3 id='roleUser'></h3>
+								<h3 id='nameUser'></h3>
+							</h3>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<!--<div class="col-lg-12">
+    <ul class="nav pull-right top-menu">
+        <li>
+        <span class="username btn text-dark fa fa-users">                                        Administrador
+                                                            </span>
+        </li>
+        <li><form id="frm-logout" action="https://taquerialosportales.onitfy.com/logout" method="POST">
+                        <input type="hidden" name="_token" value="dmhxJRvL1UzBeEDV9rb7ihO4THIztM86H9ZGgPBY">
+                       <button class="text-left" >&nbsp;&nbsp;&nbsp;<i class="icon_profile"></i> &nbsp;Cerrar sesión </a> </button>
+                    </form>
+                </li>
+
+            </ul>
+        </li>
+    </ul>
+</div>-->
+							<div class="col-lg-2 col-md-4 col-sm-2 col-xs-0.50">
+								<ul class="sup-Log">
+									<li class="sub-menu">
+										<form id="frm-logout" action="https://taquerialosportales.onitfy.com/logout"
+											method="POST" name="salir">
+											<input type="hidden" name="_token"
+												value="dmhxJRvL1UzBeEDV9rb7ihO4THIztM86H9ZGgPBY">
+											<input type="hidden" name="campo1" value="valor">
+											<a href="#" id='logoutPass' onclick="$(this).closest('form').submit()">
+												<i class="fa fa-sign-out log-sup"></i>
+												<p class="log-sup">Cerrar Sesión</p>
+											</a>
+										</form>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-12">
+						</ul>
+					</div>
+				</div>
+				<section>
+					<div class="container-fluid">
+						<div class="row">
+							<!-- Datos del Ticket -->
+							<!-- Para los pedidos verificar como los piden en: https://www.taquerialosportales.com/orderonline1 -->
+							<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="padding-left:0%;">
+								<section class="panel panel-warning" style="overflow-y: auto;height:645px;">
+									<div class="panel-body" style="border: none;">
+										<header>
+											<h3 class="title">
+													Ticket
+											</h3>
+										</header>
+										<div class="container-fluid">
+											<!-- Container -->
+											<div class="row">
+												<!-- row 1 -->
+												<form id='ticketForm' name='ticketForm' class="form-horizontal "
+													method="get">
+													<input type="hidden" name="_token" id="token"
+														value="dmhxJRvL1UzBeEDV9rb7ihO4THIztM86H9ZGgPBY">
+													<div class="form-group">
+														<div class="col-xs-4 col-sm-6 col-lg-4"><strong># Número
+																orden</strong></div>
+														<div class="col-xs-3 col-sm-6 col-lg-3">
+
+															<input autofocus type="number" min="1" id='SlcTables'
+																pattern=" 0+\.[0-9]*[1-9][0-9]*$"
+																oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+																step="1" maxlength="2" max="99" name='SlcTables'
+																class="form-control text-center height-custom noE">
+
+														</div>
+														<div class="col-xs-5 col-sm-12 col-lg-5 centered-form"
+															id='displayAcept'>
+															<a class="btn btn-success btn-sm btn-addOrder"
+																id='aceptNumber'><span class="fa fa-plus"></span>
+																Aceptar</a>
+														</div>
+													</div>
+											</div><!-- fin row 1 --><br>
+											<div class="row">
+												<!-- row 2 -->
+												<div id='newClientDisplay' style="display:none">
+													<div class="form-group centered-form">
+														<a class="btn btn-success btn-sm btn-addClient" id='newClient'>
+															<span class="fa fa-plus"></span> Agregar cliente
+														</a>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<div class="col-sm-4">
+													</div>
+												</div>
+											</div><!-- row 2 -->
+											<!-- aquí se debe cargar el cliente 1 -->
+											<div class="form-ticket" id='appendClients'>
+												<div id='append'>
+
+												</div>
+											</div>
+											<!-- aquí se debe cargar el cliente 2 en caso de ser de la misma mesa -->
+											<!-- esto debe de estar en la lógica del pedido -->
+											<div id='displayTotallbl' style='display:none'>
+												<div class="form-ticket">
+													<div class="row">
+														<div class="col-xs-8 col-sm-8 col-lg-8 text-right">
+															<p><strong>Subtotal $</strong></p>
+														</div>
+														<div class="col-xs-4 col-sm-4 col-lg-4"><input type="text"
+																id='txtSubTotalCart' class="form-control height-custom"
+																disabled>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-8 col-sm-8 col-lg-8 text-right">
+															<p><strong>Tax 7.5 $</strong></p>
+														</div>
+														<div class="col-xs-4 col-sm-4 col-lg-4"><input id='txtTaxCart'
+																type="text" class="form-control height-custom" disabled>
+														</div>
+													</div>
+												</div>
+												<div class="form-ticket">
+													<div class="row">
+														<div class="col-xs-8 col-sm-8 col-lg-8 text-right">
+															<p><strong>Total $</strong></p>
+														</div>
+														<div class="col-xs-4 col-sm-4 col-lg-4"><input id='txtTotalCart'
+																type="text" class="form-control height-custom" disabled>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<!-- row -->
+													<div class="form-group" style="border: none; padding-bottom: 0px;">
+														<div class="col-sm-3 text-left" id='displayPagolbl'>
+															<p><strong>
+																	<h4>Pago</h4>
+																</strong></p>
+														</div>
+													</div>
+												</div><!-- fin row -->
+											</div>
+
+
+
+
+
+											<div class="row">
+												<!-- row -->
+												<div class="form-group" style="border-bottom: none;">
+													<div class="row">
+														<div class="col-xs-9 col-sm-9 col-lg-9">
+															<div class="centered-form" id=''>
+																<!--<button class='btn btn-success-order btn-sm order btn-order'style='display:none' id="makeOrder">
+																Ordenar</button>-->
+																<button type="button" id="makeOrder"
+																	style='display:none'
+																	class='btn btn-success-order btn-sm order btn-order'
+																	data-toggle="modal" data-target="#myModalpago">
+																	Ordenar
+																</button>
+															</div>
+														</div>
+														<div class="col-xs-3 col-sm-3 col-lg-3">
+															<div class="centered-form">
+																<button
+																	class="btn btn-warning redaction btn-sm cancel btn-cancel"
+																	id='cancelOrder' style='display:none'
+																	title="Cancelar orden"> <span
+																		class="icon_trash_alt"></span></button>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<!-- The Modal -->
+
+												<div class="modal" id="myModalpago">
+													<div class="modal-dialog">
+														<div class="modal-content">
+
+															<!-- Modal Header -->
+															<div class="modal-header">
+																<h4 class="modal-title text-center">Tipo de pago</h4>
+																<button type="button" class="close"
+																	data-dismiss="modal">&times;</button>
+															</div>
+															<!-- Modal body -->
+															<div class="modal-body">
+																<div class="row">
+																	<!-- row -->
+																	<div class="form-group" id='PaymentDisplay'>
+																		<div
+																			class="col-xs-6 col-sm-6 col-lg-6 centered-form">
+																			<button class="btn btn-success-pay btn-sm"
+																				id='btnTarjeta'><span
+																					class="fa fa-credit-card grow"></span>
+																				<p>Tarjeta</p>
+																			</button>
+																			<!-- validar si es tarjeta donde pagar, agregar lo que Alex comento que ya lo tenías hecho -->
+																		</div>
+																		<div
+																			class="col-xs-6 col-sm-6 col-lg-6 centered-form">
+																			<button
+																				class="btn btn-success-pay btn-sm dr"
+																				id='btnEfectivo'><span
+																					class="fa fa-money grow"></span>
+																				<p>Efectivo</p>
+																			</button>
+																			<!-- validar si es tarjeta donde pagar, agregar lo que Alex comento que ya lo tenías hecho -->
+																		</div>
+																	</div>
+																</div><!-- fin row -->
+															</div>
+
+															<!-- Modal footer -->
+															<div class="modal-footer">
+																<button type="button" class="btn btn-success"
+																	id='btnPagar'>Pagar</button>
+																<button type="button" class="btn btn-warning"
+																	data-dismiss="modal">Cerrar</button>
+															</div>
+
+														</div>
+													</div>
+												</div><!-- fin modal pagos-->
+
+												</form>
+												<div>
+													<!-- fin Container -->
+												</div>
+								</section>
+							</div>
+							<!-- Fin datos del Ticket -->
+							<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" id='categoriesDisplay'
+								style="padding-left:0%; display:none">
+								<section class="panel panel-warning" style="overflow-y: auto;height:645px;">
+
+									<header class="panel-heading-white" style="border: none;">
+										<header style="margin-bottom: 10px;">
+											<h3 class="title">
+													Categorías
+												</h3>
+										</header>
+										<a class="btn btn-warning btn-sm img-rounded img-responsive abc"
+											onclick=(orderByCat(1))>A-Z</a>
+										<a class="btn btn-warning btn-sm img-rounded img-responsive abc"
+											onclick=(orderByCat(2))>Z-A</a>
+									</header>
+									<!--Inicio Tamaño completo-->
+									<!--<div class="container-fluid" id='categoriesOrder'>-->
+									<!-- Cargar las categorias actuales (activas) en la base de datos si es false no colocar -->
+
+									<!--Fin Tamaño completo-->
+							</div>
+							<!-- Inicia catalogo de productos -->
+							<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5" id='foodDisplay'
+								style='padding-left:0%; display:none;'>
+								<section class="panel panel-warning" style="border:none;overflow-y: auto;height:645px;">
+									<header style="margin-left: 10px; padding-top: 15px;">
+										<h3 id='lblFood' class="title">
+												Platillos
+											</h3>
+										<h3 id='lblDrinks' class="title">
+												Bebidas
+											</h3>
+									</header>
+									<!--tab nav start-->
+									<section class="panel" style="border:none;">
+										<div class="panel-body" style="border:none; padding-left: 0%;">
+											<div class="container">
+												<div class="row">
+													<table class="table table-responsive " style="border:0;">
+														<tr id='subcategoriesButtons'>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div>
+									</section>
+									<!--Platillos ejemplos-->
+									<section class="panel " style="border:none;">
+										<div class="container-fluid">
+											<!-- Aquí se deberán cargas los platillos de acuerdo a la categoria seleccionada, programar el + y - para solicitar la cantidad -->
+											<div class="row">
+												<div id='foodCategories'>
+													<!-- Verificar si se pide ingrediente extra y  poner las instrucciones del platillo: ver en https://www.taquerialosportales.com/orderonline1 -->
+													
+												</div>
+											</div>
+										</div>
+									</section>
+							</div>
+							<div class="modal fade" tabindex="-1" role="dialog" id="myModal"
+								aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+								<div class="modal-dialog modal-lg" role="document">
+									<div class="modal-content custom">
+										<div class="modal-header">
+											<h2 class="modal-title text-center" id='lblFoodTitle'>Platillo</h2>
+											<h2 class="modal-title text-center" id='lblDrinkTitle'>Bebida </h2>
+										</div>
+										<div class="modal-body">
+											<form action="">
+												<div id='ExtraAp'>
+												</div>
+												Cantidad: <br>
+												<div class="input-group col-sm-4">
+													<a class="input-group-addon btn btn-danger"
+														style="color:white;background:red;"
+														onclick='restValue("#txtQuantityExtra")'><strong>-</strong></a>
+													<input type="number" min="0" max="500" id='txtQuantityExtra'
+														disabled value='1' class="form-control text-center">
+													<a class="input-group-addon btn btn-success"
+														style="color:white;background:green;"
+														onclick='sumValue("#txtQuantityExtra")'><strong>+</strong></a>
+												</div><br><br>
+												<div class="form-group">
+													<label class="col-sm-4 control-label text-left">Instrucciones
+														especiales:</label>
+													<div class="col-sm-8">
+														<textarea name="txtDescriptionExtra" id='txtDescriptionExtra'
+															maxlength="149" class="form-control" rows="3"
+															cols="5"></textarea>
+													</div>
+												</div>
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-success"
+												id='btnAgregarF1'>Agregar</button>
+											<button type="button" class="btn btn-warning"
+												data-dismiss="modal">Cerrar</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--Tercer modal-->
+
+
+
+							<!--Segundo modal-->
+
+
+
+							<!--cuarto modal-->
+
+
+
+							<div class="modal fade" tabindex="-1" role="dialog" id="myModal4"
+								aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+								<div class="modal-dialog modal-lg" role="document">
+									<div class="modal-content custom">
+										<div class="modal-header">
+											<h4 class="modal-title">Agregar bebida</h4>
+										</div>
+										<div class="modal-body">
+											<form action="">
+												Cantidad: <br>
+												<div class="input-group col-sm-4">
+													<a class="input-group-addon btn btn-danger" style="color:red;"
+														onclick='restValue("#txtQuantityDrink")'>-</a>
+													<input type="number" min="0" max="500" value='1'
+														id='txtQuantityDrink' disabled class="form-control text-center">
+													<a class="input-group-addon btn btn-success" style="color:green;"
+														onclick='sumValue("#txtQuantityDrink")'>+</a>
+												</div><br><br>
+												<div class="form-group">
+													<label class="col-sm-4 control-label text-left">Instrucciones
+														especiales:</label>
+													<div class="col-sm-8">
+														<textarea name="txtinstrucciones" id='txtDescriptionDrink'
+															maxlength="149" value='' class="form-control" rows="3"
+															cols="5"></textarea>
+													</div>
+												</div>
+											</form>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-success"
+												id='btnAgregarF4'>Agregar</button>
+											<button type="button" class="btn btn-warning"
+												data-dismiss="modal">Cerrar</button>
+										</div>
+									</div>
+								</div>
+							</div><!-- fin modal 4-->
+
+
+
+
+						</div><!-- cierrar Row-->
+					</div>
+				</section>
+
+
+				<script>
+					// creamos el evento para cada tecla pulsada
+					document.getElementById("txtDescriptionExtra").addEventListener("keypress", verificar);
+
+					function verificar(e) {
+						// comprovamos con una expresion regular que el caracter pulsado sea
+						// una letra, numero o un espacio
+						if (e.key.match(/[a-z0-9ñçáéíóú\s]/i) === null) {
+							// Si la tecla pulsada no es la correcta, eliminado la pulsación
+							e.preventDefault();
+						}
+					}
+					// creamos el evento para cada tecla pulsada
+					document.getElementById("txtDescriptionDrink").addEventListener("keypress", verificar);
+
+					function verificar(e) {
+						// comprovamos con una expresion regular que el caracter pulsado sea
+						// una letra, numero o un espacio
+						if (e.key.match(/[a-z0-9ñçáéíóú\s]/i) === null) {
+							// Si la tecla pulsada no es la correcta, eliminado la pulsación
+							e.preventDefault();
+						}
+					}
+				</script>
+				<!-- JS teclado virtual -->
+				<script src="js/keyboard/keyboard.js"></script>
+
+				<script src="js/moment.js"></script>
+				<!-- ck editor -->
+				<!-- custom form component script for this page-->
+				<!-- custome script for all page -->
+				<script type="text/javascript" src="js/ga.js"></script>
+				<script src="js/jquery.js"></script>
+				<script src="js/jquery-ui-1.10.4.min.js"></script>
+				<script src="js/jquery-1.8.3.min.js"></script>
+				<script type="text/javascript" src="js/jquery-ui-1.9.2.custom.min.js"></script>
+				<!-- bootstrap -->
+				<script src="js/bootstrap.min.js"></script>
+				<!-- nice scroll -->
+				<script src="js/jquery.scrollTo.min.js"></script>
+				<script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+				<!-- jquery validate js -->
+				<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+				<!-- charts scripts -->
+				<script src="assets/jquery-knob/js/jquery.knob.js"></script>
+				<script src="js/jquery.sparkline.js" type="text/javascript"></script>
+				<script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+				<script src="js/owl.carousel.js"></script>
+				<!-- jQuery full calendar -->
+				<script src="js/fullcalendar.min.js"></script>
+				<!-- Full Google Calendar - Calendar -->
+				<script src="assets/fullcalendar/fullcalendar/fullcalendar.js"></script>
+				<!--script for this page only-->
+				<script src="js/calendar-custom.js"></script>
+				<script src="js/jquery.rateit.min.js"></script>
+				<!-- custom select -->
+				<script src="js/jquery.customSelect.min.js"></script>
+				<script src="assets/chart-master/Chart.js"></script>
+
+				<!--custome script for all page-->
+				<script src="js/scripts.js"></script>
+				<!-- custom script for this page-->
+				<script src="js/sparkline-chart.js"></script>
+				<script src="js/easy-pie-chart.js"></script>
+				<script src="js/jquery-jvectormap-1.2.2.min.js"></script>
+				<script src="js/jquery-jvectormap-world-mill-en.js"></script>
+				<script src="js/xcharts.min.js"></script>
+				<script src="js/jquery.autosize.min.js"></script>
+				<script src="js/jquery.placeholder.min.js"></script>
+				<script src="js/gdp-data.js"></script>
+				<script src="js/morris.min.js"></script>
+				<script src="js/sparklines.js"></script>
+				<script src="js/charts.js"></script>
+				<script src="js/jquery.slimscroll.min.js"></script>
+				<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+				<script type="text/javascript" charset="utf8"
+					src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+				<script>
+					//knob
+					$(function () {
+						$(".knob").knob({
+							'draw': function () {
+								$(this.i).val(this.cv + '%')
+							}
+						})
+					});
+
+					//carousel
+					$(document).ready(function () {
+						$("#owl-slider").owlCarousel({
+							navigation: true,
+							slideSpeed: 300,
+							paginationSpeed: 400,
+							singleItem: true
+
+						});
+					});
+
+					//custom select box
+
+					$(function () {
+						$('select.styled').customSelect();
+					});
+
+					/* ---------- Map ---------- */
+					$(function () {
+						$('#map').vectorMap({
+							map: 'world_mill_en',
+							series: {
+								regions: [{
+									values: gdpData,
+									scale: ['#000', '#000'],
+									normalizeFunction: 'polynomial'
+								}]
+							},
+							backgroundColor: '#eef3f7',
+							onLabelShow: function (e, el, code) {
+								el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+							}
+						});
+					});
+				</script>
+				<script type='text/javascript'>
+					$("#sideOrders").addClass("active");
+				</script>
+				<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+				<script src="js/methods//functions.js"></script>
+				<script src="js/orders/categories.js"></script>
+				<script src="js/orders/ticket.js"></script>
+				<script src="js/orders/subcategories.js"></script>
+				<script>
+					$('.modal').on('hidden.bs.modal', function () {
+						//$(this).find('form')[0].reset(); //para borrar todos los datos que tenga los input, textareas, select.
+						$("label.error").remove(); //lo utilice para borrar la etiqueta de error del jquery validate
+					});
+				</script>
+				<script>
+					$(document).ready(function () {
+						jQuery('#main-content').css({
+							'margin-left': '0px'
+						});
+						jQuery('#sidebar').css({
+							'margin-left': '-180px'
+						});
+						jQuery('#sidebar > ul').hide();
+						jQuery("#container").addClass("sidebar-closed");
+
+					});
+				</script>
+				<footer class="navbar-fixed-bottom">
+					<div class="container text-center">
+						&copy; Dise&ntilde;o <a class="text-danger" href="https://cadlovers.com/"
+							target="_new">CADLovers</a>
+					</div>
+				</footer>
+</body>
+
+</html>
